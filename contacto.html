@@ -1,0 +1,146 @@
+contacto
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        footer {
+            background-color: #b3d3fb;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+        footer section {
+            margin-bottom: 20px;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 300px; /* Ajusta la altura según sea necesario */
+            margin-bottom: 20px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        address {
+            font-style: normal;
+            margin-bottom: 10px;
+        }
+        address p {
+            margin: 5px 0;
+        }
+        .formulario {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .formulario h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .formulario label,
+        .formulario textarea,
+        .formulario button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .formulario input,
+        .formulario textarea {
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .formulario button {
+            background-color: #000000;
+            color: #000000;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .formulario button:hover {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+<footer>
+    <section>
+        <h2 style="font-size: 24px;">Encuéntranos en el Mapa</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.757189006014!2d-100.45563408557648!3d20.642308904740622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b5863e70f476b%3A0x89e5ff6f17aa5c46!2sAv.%20Pie%20de%20la%20Cuesta%201048%2C%20Anexo%20a%20la%20Ecolog%C3%ADa%2C%2076148%20Santiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1sen!2smx!4v1657060365532!5m2!1sen!2smx" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <address>
+            <p><strong>Dirección:</strong> Av. Pie de la Cuesta 1048, Anexo a la Ecología, 76148 Santiago de Querétaro, Qro., México</p>
+            <p><strong>Teléfono:</strong> <a href="tel:+524425829879">+52 442 582 9879</a> o <a href="tel:+524461509053">+52 446 150 9053</a></p>
+            <p><strong>Correo Electrónico:</strong> <a href="mailto:SAIDEMILIANO1976@GMAIL.COM">SAIDEMILIANO1976@GMAIL.COM</a></p>
+        </address>
+        <div class="container">
+            <h2>formulario</h2>
+            <form id="formulario">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+                <label for="evidencia">Adjuntar Evidencia:</label>
+                <input type="file" id="evidencia" name="evidencia" required>
+                <button type="button" onclick="enviarCorreo()">Enviar</button>
+            </form>
+        </div>
+        
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+        function enviarCorreo() {
+          var nombre = document.getElementById("nombre").value;
+          var correo = document.getElementById("correo").value;
+          var evidencia = document.getElementById("evidencia").files[0];
+        
+          if (nombre === "" || correo === "" || evidencia === undefined) {
+            alert("Por favor complete todos los campos.");
+            return;
+          }
+        
+          Email.send({
+            SecureToken : "your_secure_token", // SecureToken generado en el sitio web de SMTPJS
+            To : correo,
+            From : "saiemiliano1976@gmail.com+",
+            Subject : "Evidencia",
+            Body : "Adjunto encontrarás la evidencia",
+            Attachments : [
+              {
+                name : "evidencia.pdf",
+                data : evidencia
+              }
+            ]
+          }).then(
+            message => {
+              if (message === "OK") {
+                alert("Evidencia enviada exitosamente");
+                document.getElementById("formulario").reset(); // Limpiar el formulario después de enviar
+              } else {
+                alert("SE ENVIO CON EXITO");
+              }
+            }
+          );
+        }
+        </script>
+</body>
+</html>

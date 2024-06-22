@@ -1,0 +1,137 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Motos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #28a745;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(238, 3, 3, 0.1);
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .moto {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fffcfc;
+            display: flex;
+            align-items: center;
+        }
+        .moto img {
+            max-width: 40%;
+            height: auto;
+            margin-right: 20px;
+        }
+        .moto-info {
+            flex-grow: 1;
+            text-align: left;
+        }
+        .moto h2 {
+            margin-top: 0;
+        }
+        .moto p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ALlA GAMA</h1>
+    </header>
+    <div class="container">
+        <div class="moto">
+            <div class="moto-info">
+                <h2>Yamaha YZF R1</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: Yamaha</p>
+                <p>Año: 2012</p>
+                <p>Cilindrada: 599 cc</p>
+                <p>Potencia: 129 CV</p>
+                <p>Precio: $140,000</p>
+            </div>
+            <img src="Yamaha-YZF-R1.jpg" alt="Yamaha YZF R1">
+        </div>
+        
+        <div class="moto">
+            <div class="moto-info">
+                <h2>Yamaha MT-07</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: Yamaha</p>
+                <p>Año: 2024</p>
+                <p>Cilindrada: 689 cc</p>
+                <p>Potencia: 110 CV</p>
+                <p>Precio: $239,499</p>
+            </div>
+            <img src="mt-07.gif" alt="Yamaha MT-07">
+        </div>
+        
+        <div class="moto">
+            <div class="moto-info">
+                <h2>Suzuki GSXR</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: Suzuki</p>
+                <p>Año: 2024</p>
+                <p>Cilindrada: 599 cc</p>
+                <p>Potencia: 123.93 CV</p>
+                <p>Precio: $239,000</p>
+            </div>
+            <img src="Suzuki-GSXR-600-2012-5.jpg" alt="Suzuki GSXR">
+        </div>
+        
+        <div class="moto">
+            <div class="moto-info">
+                <h2>Panigale V4</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: Panigale</p>
+                <p>Año: 2022</p>
+                <p>Cilindrada: 1113 cc</p>
+                <p>Potencia: 218 CV</p>
+                <p>Precio: $663,800</p>
+            </div>
+            <img src="V4.jpg" alt="Ducati Panigale V4">
+        </div>
+        
+        <div class="moto">
+            <div class="moto-info">
+                <h2>Ducati Monster</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: Ducati</p>
+                <p>Año: 2023</p>
+                <p>Cilindrada: 833 cc</p>
+                <p>Potencia: 109 CV</p>
+                <p>Precio: $XXXXX</p> <!-- Añade el precio correspondiente -->
+            </div>
+            <img src="MONSTER.jpg" alt="Ducati Monster">
+        </div>
+        
+        <div class="moto">
+            <div class="moto-info">
+                <h2>BMW S1000RR</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: BMW</p>
+                <p>Año: 2023</p>
+                <p>Cilindrada: 999 cc</p>
+                <p>Potencia: 212 CV</p>
+                <p>Precio: $XXXXX</p> <!-- Añade el precio correspondiente -->
+            </div>
+            <img src="BMW-S-1000-RR-2021-6.jpg" alt="BMW S1000RR">
+        </div>
+    </div>
+</body>
+</html>

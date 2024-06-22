@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 300px;
+        background-color: #000000 url("RR.gif") no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("RR.gif") no-repeat center center/cover;
+        }
+        .comment-box {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .comment-form textarea {
+            resize: vertical;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+        }
+        .comment-form button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        .comment-form button:hover {
+            background-color: #218838;
+        }
+        .comments-list {
+            list-style: none;
+            padding: 0;
+        }
+        .comment-item {
+            padding: 10px;
+            border-bottom: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="comment-box">
+        <h2>Comentarios</h2>
+        <form class="comment-form" id="commentForm">
+            <textarea id="commentText" rows="4" placeholder="Escribe tu comentario aquí..."></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <ul class="comments-list" id="commentsList"></ul>
+    </div>
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Obtener el texto del comentario
+            const commentText = document.getElementById('commentText').value;
+            
+            // Crear un nuevo elemento de lista para el comentario
+            const newComment = document.createElement('li');
+            newComment.className = 'comment-item';
+            newComment.textContent = commentText;
+            
+            // Agregar el nuevo comentario a la lista
+            document.getElementById('commentsList').appendChild(newComment);
+            
+            // Limpiar el área de texto
+            document.getElementById('commentText').value = '';
+        });
+    </script>
+</body>
+</html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página con Botón de Regreso</title>
+<style>
+    /* Estilos opcionales para el botón */
+    .back-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    .back-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<!-- Botón de regreso -->
+<button class="back-button" onclick="goBack()">Regresar</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>

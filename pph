@@ -1,0 +1,35 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST["nombre"];
+    $email = $_POST["email"];
+    $opinion = $_POST["opinion"];
+    $sugerencias = $_POST["sugerencias"];
+    $suscripcion = isset($_POST["suscripcion"]) ? "Sí" : "No";
+
+    // Dirección de correo electrónico donde quieres recibir el formulario
+    $destinatario = "saidemiliano1976@gmail.com";
+
+    // Asunto del correo electrónico
+    $asunto = "Encuesta de Opinión sobre la Página";
+
+    // Cuerpo del correo electrónico
+    $mensaje = "Nombre: $nombre\n";
+    $mensaje .= "Correo electrónico: $email\n";
+    $mensaje .= "Opinión: $opinion\n";
+    $mensaje .= "Sugerencias: $sugerencias\n";
+    $mensaje .= "Suscripción al boletín: $suscripcion\n";
+
+    // Cabeceras del correo electrónico
+    $cabeceras = "From: $email";
+
+    // Envía el correo electrónico
+    if (mail($destinatario, $asunto, $mensaje, $cabeceras)) {
+        echo "¡Gracias por tu opinión! El formulario ha sido enviado correctamente.";
+    } else {
+        echo "Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.";
+    }
+} else {
+    // Si se intenta acceder al script PHP directamente
+    echo "Acceso denegado";
+}
+?>

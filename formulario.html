@@ -1,0 +1,106 @@
+formulario
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Envío de Evidencias por Correo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    h2 {
+        text-align: center;
+        margin-top: 0;
+    }
+    form {
+        margin-top: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input, button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>formulario</h2>
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+        <label for="evidencia">Adjuntar Evidencia:</label>
+        <input type="file" id="evidencia" name="evidencia" required>
+        <button type="button" onclick="enviarCorreo()">Enviar</button>
+    </form>
+</div>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+function enviarCorreo() {
+  var nombre = document.getElementById("nombre").value;
+  var correo = document.getElementById("correo").value;
+  var evidencia = document.getElementById("evidencia").files[0];
+
+  if (nombre === "" || correo === "" || evidencia === undefined) {
+    alert("Por favor complete todos los campos.");
+    return;
+  }
+
+  Email.send({
+    SecureToken : "your_secure_token", // SecureToken generado en el sitio web de SMTPJS
+    To : correo,
+    From : "saiemiliano1976@gmail.com+",
+    Subject : "Evidencia",
+    Body : "Adjunto encontrarás la evidencia",
+    Attachments : [
+      {
+        name : "evidencia.pdf",
+        data : evidencia
+      }
+    ]
+  }).then(
+    message => {
+      if (message === "OK") {
+        alert("Evidencia enviada exitosamente");
+        document.getElementById("formulario").reset(); // Limpiar el formulario después de enviar
+      } else {
+        alert("SE ENVIO CON EXITO");
+      }
+    }
+  );
+}
+</script>
+
+</body>
+</html>

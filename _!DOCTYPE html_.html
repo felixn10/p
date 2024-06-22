@@ -1,0 +1,164 @@
+inici
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Motos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2d609a85;
+        }
+        header {
+            background-color: rgba(104, 192, 230, 0.46);
+            color: rgb(0, 0, 0);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(238, 3, 3, 0.1);
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .moto {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #64bedf92;
+            display: flex;
+            align-items: center;
+            transition: box-shadow 0.3s ease;
+        }
+        .moto:hover {
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+        }
+        .moto img {
+            max-width: 40%;
+            height: auto;
+            margin-right: 20px;
+        }
+        .moto-info {
+            flex-grow: 1;
+            text-align: left;
+            display: none; /* Ocultar la información por defecto */
+            padding-top: 10px;
+        }
+        .moto:hover .moto-info {
+            display: block; /* Mostrar la información al hacer hover */
+        }
+        .moto h2 {
+            margin-top: 0;
+        }
+        .moto p {
+            margin-bottom: 10px;
+        }
+        .btn-regresar {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .btn-regresar:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Motos</h1>
+    </header>
+    <div class="container">
+        <a href="index.html" class="btn-regresar">Regresar a la página principal</a>
+        <div class="moto">
+            <div class="moto-info">
+                <h2>Yamaha YZF R1</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Tipo: Motor de 4 cilindros en línea, 4 tiempos, refrigerado por líquido</p>
+                <p>Cilindrada: 599 cc</p>
+                <p>Diámetro x Carrera: 67.0 mm x 42.5 mm</p>
+                <p>Sistema de alimentación: Inyección electrónica de combustible</p>
+                <p>Sistema de encendido: TCI (Transistor Controlled Ignition)</p>
+                <p>Arranque: Eléctrico</p>
+                <p>Transmisión: 6 velocidades</p>
+                <p>Sistema de transmisión final: Cadena</p>
+                <p>Frenos:</p>
+                <p>Freno delantero: Doble disco hidráulico, Ø 310 mm</p>
+                <p>Freno trasero: Disco hidráulico único, Ø 220 mm</p>
+            </div>
+            <img src="Yamaha-YZF-R1.jpg" alt="Yamaha YZF R1">
+        </div>
+        <!-- Agrega las siguientes motos con su ficha técnica -->
+        <div class="moto">
+            <div class="moto-info">
+                <h2>Yamaha MT-07</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: Yamaha</p>
+                <p>Año: 2024</p>
+                <p>Cilindrada: 689 cc</p>
+                <p>Potencia: 110 CV</p>
+                <p>Precio: $239,499</p>
+            </div>
+            <img src="2024_YAM_MT07A_EU_DBNM8_STA_001_03_preview-1600x750.jpg" alt="Yamaha MT-07">
+        </div>
+        <div class="moto">
+            <div class="moto-info">
+                <h2>Suzuki GSXR</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: Suzuki</p>
+                <p>Año: 2024</p>
+                <p>Cilindrada: 599 cc</p>
+                <p>Potencia: 123.93 CV</p>
+                <p>Precio: $239,000</p>
+            </div>
+            <img src="Suzuki-GSXR-600-2012-5.jpg" alt="Suzuki GSXR">
+        </div>
+        <div class="moto">
+            <div class="moto-info">
+                <h2>Panigale V4</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: Panigale</p>
+                <p>Año: 2022</p>
+                <p>Cilindrada: 1113 cc</p>
+                <p>Potencia: 218 CV</p>
+                <p>Precio: $663,800</p>
+            </div>
+            <img src="V4.jpg" alt="Panigale V4">
+        </div>
+        <div class="moto">
+            <div class="moto-info">
+                <h2>Ducati Monster</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: Ducati</p>
+                <p>Año: 2023</p>
+                <p>Cilindrada: 833 cc</p>
+                <p>Potencia: 109 CV</p>
+                <p>Precio: $XXXXX</p> <!-- Reemplazar con el precio real -->
+            </div>
+            <img src="Moster.jpg" alt="Ducati Monster">
+        </div>
+        <div class="moto">
+            <div class="moto-info">
+                <h2>BMW S1000RR</h2>
+                <p>FICHA TÉCNICA:</p>
+                <p>Marca: BMW</p>
+                <p>Año: 2023</p>
+                <p>Cilindrada: 999 cc</p>
+                <p>Potencia: 212 CV</p>
+                <p>Precio: $XXXXX</p> <!-- Reemplazar con el precio real -->
+            </div>
+            <img src="BMW-M-1000-RR-2021-6.jpg" alt="BMW S1000RR">
+        </div>
+    </div>
+</body>
+</html>
